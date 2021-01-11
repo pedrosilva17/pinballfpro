@@ -12,7 +12,7 @@
 
 -Título e "press spacebar to play"
 
-### A fazer...? (baixa prioridade)
+### A fazer...? (baixa prioridade):
 -Sistema de reserva de bolas (2 bolas extra, após isso Game Over)
 
 -Menu principal (sem ser só texto no background da mesa de pinball, com logótipo altamente profissional no Paint)
