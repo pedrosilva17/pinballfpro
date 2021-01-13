@@ -7,7 +7,7 @@ Created on Sun Dec 13 13:49:25 2020
 
 """
 Observações:
-    -Bola passa pelos suportes laterais dos flippers em certas
+    -(CORRIGIDO) Bola passa pelos suportes laterais dos flippers em certas
     situações, penso que seja em caso de incidência
     perpendicular à superfície (rever colisões)
     
