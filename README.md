@@ -4,13 +4,7 @@
 ## 1MIEIC03
 
 ### A fazer (alta prioridade):
--Flippers
-
--Bouncers (Objetos circulares para a bola colidir e acumular pontos)
-
--Sistema de pontuação
-
--Título e "press spacebar to play"
+-Revisão das colisões (limitar o número de colisões para ocorrer apenas uma de cada vez)
 
 ### A fazer...? (baixa prioridade):
 -Sistema de reserva de bolas (2 bolas extra, após isso Game Over)
