@@ -187,6 +187,7 @@ def main():
                     flipper2.rect.y = 430
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                    flipper1.surf= None 
                     flipper1.image= flipper1ogimage
                     flipper1.surf= flipper1ogsurf
                     flipper1.mask= pygame.mask.from_surface(flipper1.surf)
@@ -215,41 +216,41 @@ def main():
         #elif pygame.sprite.collide_mask(ball, bouncer1):
         elif ball.collides_with_bouncer(bouncer1.rect.centerx, bouncer1.rect.centery, 29):  
             ball.angle = 2 * tangent1 + ball.angle
-            #ball.rect.x += 2 * math.sin(colangle1)
-            #ball.rect.y -= 2 * math.cos(colangle1)
+            ball.rect.x += 2 * math.sin(colangle1)
+            ball.rect.y -= 2 * math.cos(colangle1)
             score += 1
         #elif pygame.sprite.collide_mask(ball, bouncer2):
         elif ball.collides_with_bouncer(bouncer2.rect.centerx, bouncer2.rect.centery, 29):
             ball.angle = 2 * tangent2 + ball.angle
-            #ball.rect.x += 2 * math.sin(colangle2)
-            #ball.rect.y -= 2 * math.cos(colangle2)
+            ball.rect.x += 2 * math.sin(colangle2)
+            ball.rect.y -= 2 * math.cos(colangle2)
             score += 1
         #elif pygame.sprite.collide_mask(ball, bouncer3):
         elif ball.collides_with_bouncer(bouncer3.rect.centerx, bouncer3.rect.centery, 29):
             ball.angle = 2 * tangent3 + ball.angle
-            #ball.rect.x += 2 * math.sin(colangle3)
-            #ball.rect.y -= 2 * math.cos(colangle3)
+            ball.rect.x += 2 * math.sin(colangle3)
+            ball.rect.y -= 2 * math.cos(colangle3)
             score += 1
         elif pygame.sprite.collide_mask(ball, flipper1):
             if flipper1.surf == flipper1ogsurf:
                 ball.angle = math.radians(30) - ball.angle
-                ball.rect.x += 2
-                ball.rect.y -= 3
+                ball.rect.x += 4
+                ball.rect.y -= 6
             else:
                 ball.angle = -math.radians(30) - ball.angle
-                ball.rect.x -= 2
-                ball.rect.y -= 3
+                ball.rect.x -= 4
+                ball.rect.y -= 6
         elif pygame.sprite.collide_mask(ball, flipper2):
             if flipper2.surf == flipper2ogsurf:
                 ball.angle = -math.radians(30) - ball.angle
-                ball.rect.x -= 2
-                ball.rect.y -= 3
+                ball.rect.x -= 4
+                ball.rect.y -= 6
             else:
                 ball.angle = math.radians(30) - ball.angle
-                ball.rect.x += 2
-                ball.rect.y -= 3
+                ball.rect.x += 4
+                ball.rect.y -= 6
         elif ball.rect.colliderect(support1) or ball.rect.colliderect(support2):
-            if ball.rect.x > flipper1.rect.x:
+            if ball.rect.y > flipper1.rect.centery:
                 ball.angle = math.pi - ball.angle
             else:
                 ball.angle = -ball.angle
@@ -269,12 +270,6 @@ def main():
         bouncer3sprite.draw(screen)
         flipper1sprite.draw(screen)
         flipper2sprite.draw(screen)
-        
-        
-        pygame.draw.circle(screen, (0, 0, 0), bouncer1.rect.center, 26)
-        pygame.draw.circle(screen, (0, 0, 0), bouncer2.rect.center, 26)
-        pygame.draw.circle(screen, (0, 0, 0), bouncer3.rect.center, 26)
-        pygame.draw.circle(screen, (255, 0, 0), ball.rect.center, ball.radius)
         pygame.display.flip()
 
 #ball = Ball(0, random.randint(220,310))
